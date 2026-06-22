@@ -451,7 +451,6 @@ table.req td:first-child { font-weight: 600; white-space: nowrap; }
       <div class="meta">
         <span>Audience: SharePoint Administrator (or higher)</span>
         <span>Source: <a href="https://learn.microsoft.com/en-us/sharepoint/organization-assets-library" target="_blank" rel="noopener">Microsoft Learn, Create an organization assets library</a></span>
-        <span>Doc updated 2026-04-04</span>
       </div>
       <p style="margin-top:10px;font-size:12px;color:var(--cp-text-soft)">Built and grounded on official Microsoft documentation. Unofficial community resource, not affiliated with Microsoft.</p>
     </div>
@@ -681,8 +680,8 @@ table.req td:first-child { font-weight: 600; white-space: nowrap; }
     <section id="connect">
       <h2><span class="snum">05</span> Connect to SharePoint</h2>
       <p class="lede">Authenticate as a SharePoint Administrator. Replace the URL with your own tenant admin endpoint.</p>
-      <div class="codeblock"><button class="copybtn" onclick="copyCode(this)">Copy</button><span class="cm"># Connect to your SharePoint admin center</span>
-Connect-SPOService -Url https://<span class="pm v-tenant">contoso</span>-admin.sharepoint.com</div>
+      <p style="font-size:13px;color:var(--cp-text-soft);margin-bottom:4px">Connect to your SharePoint admin center:</p>
+      <div class="codeblock"><button class="copybtn" onclick="copyCode(this)">Copy</button>Connect-SPOService -Url https://<span class="pm v-tenant">contoso</span>-admin.sharepoint.com</div>
       <p style="font-size:13px;color:var(--cp-text-soft)">See <a href="https://learn.microsoft.com/en-us/powershell/sharepoint/sharepoint-online/connect-sharepoint-online" target="_blank" rel="noopener">Getting started with the SharePoint Online Management Shell</a> for sign-in details.</p>
     </section>
 
@@ -696,13 +695,13 @@ Connect-SPOService -Url https://<span class="pm v-tenant">contoso</span>-admin.s
         The command fails unless <em>"Everyone except external users"</em> already has <strong>Read</strong> on the <code class="inline"><span class="v-lib">Templates</span></code> <strong>document library</strong> from §02 step C2. Confirm this first, or you get: <em>"Everyone except external users" needs to be given read permission to the document library.</em>
       </div>
 
-      <p style="font-size:13px;color:var(--cp-text-soft);margin-bottom:4px">Syntax</p>
+      <p style="font-size:13px;color:var(--cp-text-soft);margin-bottom:4px">Syntax:</p>
       <div class="codeblock"><button class="copybtn" onclick="copyCode(this)">Copy</button>Add-SPOOrgAssetsLibrary -LibraryUrl &lt;URL&gt; [-ThumbnailUrl &lt;URL&gt;] [-OrgAssetType OfficeTemplateLibrary] [-CdnType &lt;Private or Public&gt;]</div>
 
-      <p style="font-size:13px;color:var(--cp-text-soft);margin:14px 0 4px">Example: register a PowerPoint template library</p>
+      <p style="font-size:13px;color:var(--cp-text-soft);margin:14px 0 4px">Example, register a PowerPoint template library:</p>
       <div class="codeblock"><button class="copybtn" onclick="copyCode(this)">Copy</button>Add-SPOOrgAssetsLibrary <span class="cm">`</span>
-  -LibraryUrl https://<span class="pm v-tenant">contoso</span>.sharepoint.com/sites/<span class="v-site">branding</span>/<span class="v-lib">Templates</span> <span class="cm">`</span>
-  -ThumbnailUrl https://<span class="pm v-tenant">contoso</span>.sharepoint.com/sites/<span class="v-site">branding</span>/<span class="v-lib">Templates</span>/logo.png <span class="cm">`</span>
+  -LibraryUrl https://<span class="pm v-tenant">contoso</span>.sharepoint.com/sites/<span class="pm v-site">branding</span>/<span class="pm v-lib">Templates</span> <span class="cm">`</span>
+  -ThumbnailUrl https://<span class="pm v-tenant">contoso</span>.sharepoint.com/sites/<span class="pm v-site">branding</span>/<span class="pm v-lib">Templates</span>/logo.png <span class="cm">`</span>
   -OrgAssetType <span class="pm">OfficeTemplateLibrary</span></div>
 
       <div class="card" style="margin-top:16px">
@@ -762,15 +761,13 @@ Connect-SPOService -Url https://<span class="pm v-tenant">contoso</span>-admin.s
     <!-- 08 -->
     <section id="manage">
       <h2><span class="snum">08</span> Manage &amp; update</h2>
-      <p class="lede">Inspect, re-thumbnail, or remove libraries with the companion cmdlets.</p>
-      <div class="codeblock"><button class="copybtn" onclick="copyCode(this)">Copy</button><span class="cm"># List all organization asset libraries on the site</span>
-Get-SPOOrgAssetsLibrary
-
-<span class="cm"># Update the thumbnail for a library</span>
-Set-SPOOrgAssetsLibrary -LibraryUrl &lt;URL&gt; -ThumbnailUrl &lt;URL&gt;
-
-<span class="cm"># Remove a library from the OAL designation</span>
-Remove-SPOOrgAssetsLibrary -LibraryUrl &lt;URL&gt;</div>
+      <p class="lede">Inspect, re-thumbnail, or remove libraries with the companion cmdlets. Run one at a time.</p>
+      <p style="font-size:13px;color:var(--cp-text-soft);margin-bottom:4px">List all organization asset libraries on the site:</p>
+      <div class="codeblock"><button class="copybtn" onclick="copyCode(this)">Copy</button>Get-SPOOrgAssetsLibrary</div>
+      <p style="font-size:13px;color:var(--cp-text-soft);margin:14px 0 4px">Update the thumbnail for a library:</p>
+      <div class="codeblock"><button class="copybtn" onclick="copyCode(this)">Copy</button>Set-SPOOrgAssetsLibrary -LibraryUrl https://<span class="pm v-tenant">contoso</span>.sharepoint.com/sites/<span class="pm v-site">branding</span>/<span class="pm v-lib">Templates</span> -ThumbnailUrl https://<span class="pm v-tenant">contoso</span>.sharepoint.com/sites/<span class="pm v-site">branding</span>/<span class="pm v-lib">Templates</span>/logo.png</div>
+      <p style="font-size:13px;color:var(--cp-text-soft);margin:14px 0 4px">Remove a library from the OAL designation:</p>
+      <div class="codeblock"><button class="copybtn" onclick="copyCode(this)">Copy</button>Remove-SPOOrgAssetsLibrary -LibraryUrl https://<span class="pm v-tenant">contoso</span>.sharepoint.com/sites/<span class="pm v-site">branding</span>/<span class="pm v-lib">Templates</span></div>
     </section>
 
     <!-- 09 -->
