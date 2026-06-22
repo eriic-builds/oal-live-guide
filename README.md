@@ -2,6 +2,8 @@
 
 This repository is prepared for GitHub Pages using the `docs/` folder.
 
+https://eriic-builds.github.io/oal-live-guide/
+
 ## Upload location for your HTML
 
 Put your site files in:
