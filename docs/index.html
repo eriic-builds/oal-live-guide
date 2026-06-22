@@ -470,7 +470,7 @@ table.req td:first-child { font-weight: 600; white-space: nowrap; }
       <h3 style="font-size:15px;margin-bottom:10px">The shortest path to that</h3>
       <ol class="steps">
         <li><strong>Build the site and library.</strong> One SharePoint site, one document library. (§02)</li>
-        <li><strong>Grant read to everyone.</strong> The step most people miss. (§02 C)</li>
+        <li><strong>Grant Read to "Everyone except external users".</strong> The step most people miss. (§02 C)</li>
         <li><strong>Upload .potx templates.</strong> Not .pptx. (§03)</li>
         <li><strong>Promote the library.</strong> One PowerShell command. (§06)</li>
         <li><strong>Users open the gallery.</strong> File &rarr; New &rarr; Organization Templates. (§07)</li>
@@ -490,11 +490,11 @@ table.req td:first-child { font-weight: 600; white-space: nowrap; }
     <div class="split" style="margin-bottom:16px">
       <div class="card">
         <h3>Organization Asset Library (OAL) <span class="tag">this guide</span></h3>
-        <p style="margin:0;color:var(--cp-text-muted)">Powers the native template gallery at <code class="inline">File &rarr; New &rarr; Organization Templates</code> in PowerPoint on desktop and web. Adds the branded <strong>slide layouts</strong> users start from.</p>
+        <p style="margin:0;color:var(--cp-text-muted)">Powers the native template gallery at <code class="inline">File &rarr; New &rarr; Organization Templates</code> in PowerPoint on desktop and web. Publishes org-level templates that every user sees, and adds the branded <strong>slide layouts</strong> they start from.</p>
       </div>
       <div class="card">
-        <h3>Official Brand Kit</h3>
-        <p style="margin:0;color:var(--cp-text-muted)">Powers Copilot branded content in Copilot Create, PowerPoint Copilot, and Designer. Applies your brand <strong>theme</strong> to AI-generated and suggested designs.</p>
+        <h3>Brand Kit Templates</h3>
+        <p style="margin:0;color:var(--cp-text-muted)">Set up in <code class="inline">Copilot &rarr; Create &rarr; More &rarr; Brand kits</code>. A brand manager publishes a kit to <strong>Official</strong> for org-wide access. A Brand Kit applies your brand <strong>theme</strong>, colors, fonts, and logos, to Copilot-generated and suggested designs. It does not surface <code class="inline">.potx</code> templates in the <code class="inline">File &rarr; New</code> gallery. That is the OAL's job.</p>
       </div>
     </div>
     <div class="callout">
